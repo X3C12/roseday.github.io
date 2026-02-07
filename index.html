@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Rose Day My Love 🌹</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- Music Control Button -->
+    <button class="music-toggle" id="musicToggle" title="Play Music">
+        <span class="music-icon">🔇</span>
+    </button>
+    
+    <!-- Falling Rose Petals -->
+    <div class="petals-container" id="petalsContainer"></div>
+    
+    <!-- Main Welcome Screen -->
+    <div class="welcome-screen" id="welcomeScreen">
+        <h1 class="welcome-title">Happy Rose Day</h1>
+        
+        <!-- Rose PNG image -->
+        <div class="rose-image">
+            <img src="Screenshot 2026-02-06 at 19-24-43 canva-red-rose-flower-MAFYrV_7vyg.png (PNG Image 550 × 516 pixels).png" alt="Rose">
+        </div>
+        
+        <h2 class="welcome-subtitle">My Beautiful Love 💕</h2>
+        <button class="enter-btn" id="enterBtn">Open Your Gift 🌹</button>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <!-- Navigation -->
+        <div class="nav-dots">
+            <span class="dot active" data-screen="1"></span>
+            <span class="dot" data-screen="2"></span>
+            <span class="dot" data-screen="3"></span>
+            <span class="dot" data-screen="4"></span>
+            <span class="dot" data-screen="5"></span>
+            <span class="dot" data-screen="6"></span>
+            <span class="dot" data-screen="7"></span>
+        </div>
+        
+        <!-- Screen 1: Live Countdown -->
+        <div class="content-screen active" id="screen1">
+            <h2 class="screen-heading">⏰ Our Love Timer ⏰</h2>
+            <div class="countdown-box">
+                <div class="countdown-item">
+                    <span class="count-num" id="days">0</span>
+                    <span class="count-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="count-num" id="hours">0</span>
+                    <span class="count-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="count-num" id="minutes">0</span>
+                    <span class="count-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="count-num" id="seconds">5</span>
+                    <span class="count-label">Seconds</span>
+                </div>
+            </div>
+            <p class="countdown-text">Since we started our beautiful journey together! 💖</p>
+            <button class="nav-btn" onclick="goToScreen(2)">Next →</button>
+        </div>
+        
+        <!-- Screen 2: Love Letter -->
+        <div class="content-screen" id="screen2">
+            <h2 class="screen-heading">💌 A Letter For You 💌</h2>
+            <div class="letter-box">
+                <p class="letter-line">My Dearest Love,</p>
+                <p class="letter-line.">I love you soooooo much pikachu ik u are sleeping gandu lavkar uth I  am waiting baal</p>
+                <p class="letter-line"> I miss you alot baal 🥺🥺🥺🥺 you are my sleeping beauty baal</p>
+                <p class="letter-line">your eyes are soooooo beautiful baal i just love the gandu 😭😭😭😭😭</p>
+                <p class="letter-sign">Forever Yours, ❤️</p>
+            </div>
+            <button class="nav-btn" onclick="goToScreen(3)">Next →</button>
+        </div>
+        
+        <!-- Screen 3: Letter For You <3 -->
+        <div class="content-screen" id="screen3">
+            <h2 class="screen-heading">💕 Letter For You 💖</h2>
+            <div class="letter-box">
+                <p class="letter-line">My Pikachu, 💗</p>
+                <p class="letter-line">I love you soooooo much BAAL  and miss you alot i always love you baal </p>
+                <p class="letter-line">I am sorry for yesterday and I am sorry 🥺🥺🥺🥺😭😭😭😭</p>
+                <p class="letter-line"> I love you lots baal and soooo much baby✨</p>
+                <p class="letter-sign">Forever Yours, ❤️💕</p>
+            </div>
+            <button class="nav-btn" onclick="goToScreen(4)">Next →</button>
+        </div>
+        
+        <!-- Screen 4: Interactive Rose - Pick Petals -->
+        <div class="content-screen" id="screen4">
+            <h2 class="screen-heading">🌹 Why You're Special To Me 🌹</h2>
+            <p class="instruction-text">Click on the petals to discover why you're special! 💕</p>
+            
+            <div class="interactive-rose-container">
+                <div class="pickable-rose">
+                    <div class="pick-petals">
+                        <div class="pick-petal pp1" data-reason="0" onclick="pickPetal(this)"></div>
+                        <div class="pick-petal pp2" data-reason="1" onclick="pickPetal(this)"></div>
+                        <div class="pick-petal pp3" data-reason="2" onclick="pickPetal(this)"></div>
+                        <div class="pick-petal pp4" data-reason="3" onclick="pickPetal(this)"></div>
+                        <div class="pick-petal pp5" data-reason="4" onclick="pickPetal(this)"></div>
+                        <div class="pick-petal pp6" data-reason="5" onclick="pickPetal(this)"></div>
+                        <div class="pick-petal pp7" data-reason="6" onclick="pickPetal(this)"></div>
+                        <div class="pick-petal pp8" data-reason="7" onclick="pickPetal(this)"></div>
+                    </div>
+                    <div class="pick-center"></div>
+                </div>
+                <div class="pick-stem"></div>
+            </div>
+            
+            <div class="reason-display" id="reasonDisplay">
+                <p class="reason-text" id="reasonText">Pick a petal to see why you're special! 💖</p>
+                <p class="petals-left" id="petalsLeft">8 petals remaining</p>
+            </div>
+            
+            <button class="nav-btn" onclick="goToScreen(5)">Next →</button>
+        </div>
+        
+        <!-- Screen 5: Our Memories Gallery -->
+        <div class="content-screen" id="screen5">
+            <h2 class="screen-heading">💕 My Mommyy <3 💕</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <div class="photo-frame">
+                        <img src="image1.png" alt="Memory 1" class="gallery-photo">
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="photo-frame">
+                        <img src="image2.png" alt="Memory 2" class="gallery-photo">
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="photo-frame">
+                        <img src="image3.png" alt="Memory 3" class="gallery-photo">
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="photo-frame">
+                        <img src="image4.png" alt="Memory 4" class="gallery-photo">
+                    </div>
+                </div>
+            </div>
+            <button class="nav-btn" onclick="goToScreen(6)">Next →</button>
+        </div>
+        
+        <!-- Screen 6: Will You Be Mine? (Yes/No) -->
+        <div class="content-screen" id="screen6">
+            <div class="screen-content" style="max-width: 600px;">
+                <div class="text-center mb-8">
+                    <div class="text-7xl mb-6 animate-bounce">💖</div>
+                    <h2 class="screen-heading" style="font-size: 2.5em;">Will You Be Mine?</h2>
+                    <p class="text-white text-xl mb-8" style="font-style: italic;">My heart is yours forever...</p>
+                </div>
+                
+                <div class="flex justify-center gap-4 mb-8 text-4xl">
+                    <span class="animate-bounce" style="animation-delay: 0s;">💕</span>
+                    <span class="animate-bounce" style="animation-delay: 0.1s;">💖</span>
+                    <span class="animate-bounce" style="animation-delay: 0.2s;">💗</span>
+                </div>
+                
+                <div style="display: flex; justify-content: center; gap: 30px; margin: 50px 0;">
+                    <button class="yes-btn" id="yesBtn" onclick="handleYes()">
+                        Yes! 💘 I'm All Yours
+                    </button>
+                    <button class="no-btn" id="noBtn">
+                        Not Sure Yet
+                    </button>
+                </div>
+                
+                <p class="text-white/60 text-center mt-8 italic">💫 The right answer is obvious...</p>
+            </div>
+        </div>
+        
+        <!-- Screen 7: Happy Rose Day (Final Message) -->
+        <div class="content-screen" id="screen7">
+            <div class="final-rose-icon">🌹</div>
+            <h2 class="screen-heading">Happy Rose Day meri Chanchuuu <3 </h2>
+            <div class="final-box">
+                <p class="final-text">Just like this rose,</p>
+                <p class="final-text">My love for you blooms</p>
+                <p class="final-text">More beautiful each day</p>
+                <div class="final-heart">❤️</div>
+                <p class="final-quote">"In a sea of people, my eyes will always search for you"</p>
+            </div>
+            <button class="nav-btn restart" onclick="restartJourney()">Start Over 🔄</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
